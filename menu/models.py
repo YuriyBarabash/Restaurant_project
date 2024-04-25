@@ -10,6 +10,7 @@ class MenuCategory(models.Model):
     slug = models.SlugField(max_length=50, unique=True, db_index=True)
     name = models.CharField(max_length=50, unique=True)
     position = models.PositiveSmallIntegerField(unique=True)
+    icon = models.CharField(max_length=50, blank=True)
     is_visible = models.BooleanField(default=True)
 
     class Meta:
