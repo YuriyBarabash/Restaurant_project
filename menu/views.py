@@ -7,4 +7,4 @@ def menu(request):
     context = {'categories': categories}
     for category in categories:
         category.dishes = MenuDish.objects.filter(category=category, is_visible=True)
-    return render(request, 'index.html', context=context)
+    return render(request, 'menu_index.html', context=context)

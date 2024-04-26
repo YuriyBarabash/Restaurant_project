@@ -20,7 +20,6 @@ from django.urls import path, include
 from home.views import home
 from menu.views import menu
 from about.views import about
-from blog.views import blog
 from chefs.views import chefs
 from gallery.views import gallery
 from story.views import story

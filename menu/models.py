@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class MenuCategory(models.Model):
     '''
     This class is used to define the menu category model
