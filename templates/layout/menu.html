@@ -143,68 +143,8 @@
                         <h2 class="alt-font fw-400 text-dark-gray">Special proposals</h2>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2 justify-content-center" data-anime='{ "el": "childs", "translateY": [50, 0], "rotateY": [-30, 0], "opacity": [0,1], "duration": 600, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
-                    <div class="col border-end xs-border-end-0 border-color-transparent-dark-very-light text-center md-mb-50px sm-mb-30px">
-                        <!-- start services box style --> 
-                        <div class="services-box-style-04 last-paragraph-no-margin border-radius-4px overflow-hidden position-relative">
-                            <div class="mb-25px">
-                                <img src={% static "images/demo-restaurant-menu-02.jpg" %} alt="" data-bottom-top="transform: rotate(15deg)" data-top-bottom="transform:rotate(-15deg)">
-                            </div>
-                            <div class="box-overlay bg-white z-index-minus-1"></div>
-                            <div>
-                                <div class="bg-yellow border-radius-4px mb-20px overflow-hidden d-inline-flex">
-                                    <div class="review-star-icon review-star-icon-white ps-15px pe-15px lh-38 align-self-center">
-                                        <i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i>
-                                    </div>
-                                    <span class="text-white fs-18 alt-font fw-500 bg-dark-gray ps-10px pe-10px d-flex align-items-center">4.8</span>
-                                </div>
-                                <div class="d-block fs-24 alt-font ls-minus-05px text-dark-gray">Grilled steak marinades</div>
-                                <span class="fs-26 alt-font ls-minus-1px text-dark-gray"><del class="me-10px text-red">$25.00</del>$19.00</span>
-                            </div>
-                        </div>
-                        <!-- end services box style --> 
-                    </div>
-                    <div class="col border-end xs-border-end-0 md-border-end-0 border-color-transparent-dark-very-light text-center md-mb-50px sm-mb-30px">
-                        <!-- start services box style --> 
-                        <div class="services-box-style-04 last-paragraph-no-margin border-radius-4px overflow-hidden position-relative">
-                            <div class="mb-25px">
-                                <img src={% static "images/demo-restaurant-menu-03.jpg" %} alt="" data-bottom-top="transform: rotate(-15deg)" data-top-bottom="transform:rotate(15deg)">
-                            </div>
-                            <div class="box-overlay bg-white z-index-minus-1"></div>
-                            <div>
-                                <div class="bg-yellow border-radius-4px mb-20px overflow-hidden d-inline-flex">
-                                    <div class="review-star-icon review-star-icon-white ps-15px pe-15px lh-38 align-self-center">
-                                        <i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i>
-                                    </div>
-                                    <span class="text-white fs-18 alt-font fw-500 bg-dark-gray ps-10px pe-10px d-flex align-items-center">4.3</span>
-                                </div>
-                                <div class="d-block fs-24 alt-font ls-minus-05px text-dark-gray">Beef masala grill</div>
-                                <span class="fs-26 alt-font ls-minus-1px text-dark-gray"><del class="me-10px text-red">$24.00</del>$18.00</span>
-                            </div>
-                        </div>
-                        <!-- end services box style --> 
-                    </div>
-                    <div class="col text-center">
-                        <!-- start services box style --> 
-                        <div class="services-box-style-04 last-paragraph-no-margin border-radius-4px overflow-hidden position-relative">
-                            <div class="mb-25px">
-                                <img src={% static "images/demo-restaurant-menu-04.jpg" %} alt="" data-bottom-top="transform: rotate(15deg)" data-top-bottom="transform:rotate(-15deg)">
-                            </div>
-                            <div class="box-overlay bg-white z-index-minus-1"></div>
-                            <div>
-                                <div class="bg-yellow border-radius-4px mb-20px overflow-hidden d-inline-flex">
-                                    <div class="review-star-icon review-star-icon-white ps-15px pe-15px lh-38 align-self-center">
-                                        <i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i>
-                                    </div>
-                                    <span class="text-white fs-18 alt-font fw-500 bg-dark-gray ps-10px pe-10px d-flex align-items-center">4.9</span>
-                                </div>
-                                <div class="d-block fs-24 alt-font ls-minus-05px text-dark-gray">Slow Cooker Potpourri</div>
-                                <span class="fs-26 alt-font ls-minus-1px text-dark-gray"><del class="me-10px text-red">$22.00</del>$20.00</span>
-                            </div>
-                        </div> 
-                        <!-- end services box style --> 
-                    </div>
-                </div>
+                {% block special_proposals %}
+                {% endblock %}             
             </div>
         </section>
         <!-- end section -->

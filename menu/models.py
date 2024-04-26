@@ -18,6 +18,14 @@ class MenuCategory(models.Model):
         verbose_name_plural = 'Dish Categories'
         ordering = ('position',)
 
+    def __iter__(self):
+        """
+        A function that returns an iterator object for the given class instance.
+        """
+        for dish in self.dishes.filter(is_visible=True):
+            yield dish
+
+
     def __str__(self) -> 'str':
         '''
         This method returns the name of the category
@@ -34,7 +42,7 @@ class MenuDish(models.Model):
     '''
     slug = models.SlugField(max_length=50, unique=True, db_index=True)
     name = models.CharField(max_length=255, unique=True)
-    category = models.ForeignKey(MenuCategory, on_delete=models.CASCADE)
+    category = models.ForeignKey(MenuCategory, on_delete=models.CASCADE, related_name='dishes')
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
     position = models.PositiveSmallIntegerField()
@@ -52,6 +60,35 @@ class MenuDish(models.Model):
         '''
         This method returns the name of the dish
         :return: name of the dish
+        '''
+        return self.name
+
+
+class SpecialProposals(models.Model):
+    '''
+    This class is used to define the special proposal model
+    :param models.Model: This class is used to define the special proposal model
+    :type models.Model: class
+    :return
+    '''
+    slug = models.SlugField(max_length=50, unique=True, db_index=True)
+    name = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    old_price = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
+    photo = models.ImageField(upload_to='special_proposals/', blank=True)
+    is_visible = models.BooleanField(default=True)
+    mark = models.CharField(max_length=50, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Special Proposals'
+        ordering = ('-created_at',)
+
+    def __str__(self) -> 'str':
+        '''
+        This method returns the name of the special proposal
+        :return: name of the special proposal
         '''
         return self.name
 

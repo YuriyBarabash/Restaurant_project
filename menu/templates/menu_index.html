@@ -5,7 +5,7 @@
         <div class="row justify-content-center mb-1">
             <div class="col-lg-7 text-center" data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
                 <span class="fs-15 fw-600 text-red text-uppercase mb-10px d-block"><span class="w-5px h-2px bg-red d-inline-block align-middle me-5px"></span>Choose delicious<span class="w-5px h-2px bg-red d-inline-block align-middle ms-5px"></span></span>
-                <h2 class="alt-font text-dark-gray">Popular menu</h2>
+                <h1 class="alt-font text-dark-gray">menu</h1>
             </div>
         </div>
             <div class="row mb-6 xs-mb-8">
@@ -24,7 +24,7 @@
                         {% for category in categories %}
                             <div class="tab-pane fade{% if loop.first %} in active show{% endif %}" id="tab_{{ category.id }}">
                                 <div class="row justify-content-center">
-                                    {% for dish in category.dishes %}
+                                    {% for dish in category %}
                                         <div class="col-lg-6 sm-mb-20px">
                                             <ul class="pricing-table-style-12 pe-15px md-pe-0" data-anime='{ "el": "childs", "rotateX": [-40, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                                                 <li class="last-paragraph-no-margin">
@@ -54,5 +54,29 @@
                     <div class="d-inline-block align-middle text-dark-gray fs-18 fw-500">Unique and delicious dishes from the worlds <span class="text-decoration-line-bottom-medium fw-600">best masterchefs.</span></div>
                 </div>
             </div>
+    </div>
+{% endblock %}
+{% block special_proposals %}
+    <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2 justify-content-center" data-anime='{ "el": "childs", "translateY": [50, 0], "rotateY": [-30, 0], "opacity": [0,1], "duration": 600, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
+        {% for proposal in special_proposals %}
+        <div class="col border-end xs-border-end-0 border-color-transparent-dark-very-light text-center md-mb-50px sm-mb-30px">
+            <div class="services-box-style-04 last-paragraph-no-margin border-radius-4px overflow-hidden position-relative">
+                <div class="mb-25px">
+                    <img src="{{ proposal.photo.url }}" alt="" data-bottom-top="transform: rotate(15deg)" data-top-bottom="transform:rotate(-15deg)">
+                </div>
+                <div class="box-overlay bg-white z-index-minus-1"></div>
+                <div>
+                    <div class="bg-yellow border-radius-4px mb-20px overflow-hidden d-inline-flex">
+                        <div class="review-star-icon review-star-icon-white ps-15px pe-15px lh-38 align-self-center">
+                            <i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i><i class="bi bi-star-fill text-white"></i>
+                        </div>
+                        <span class="text-white fs-18 alt-font fw-500 bg-dark-gray ps-10px pe-10px d-flex align-items-center">{{ proposal.mark }}</span>
+                    </div>
+                    <div class="d-block fs-24 alt-font ls-minus-05px text-dark-gray">{{ proposal.name}}</div>
+                    <span class="fs-26 alt-font ls-minus-1px text-dark-gray"><del class="me-10px text-red">${{ proposal.old_price }}</del>${{ proposal.price }}</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 {% endblock %}

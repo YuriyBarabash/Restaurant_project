@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MenuCategory, MenuDish
+from .models import MenuCategory, MenuDish, SpecialProposals
 from django.utils.safestring import mark_safe
 
 @admin.register(MenuCategory)
@@ -41,3 +41,32 @@ class MenuDishAdmin(admin.ModelAdmin):
             return mark_safe(f'<img src="{obj.photo.url}" width=50 height=50>')
 
     photo_src_tag.short_description = 'Dish photo'
+
+
+@admin.register(SpecialProposals)
+class SpecialProposalsAdmin(admin.ModelAdmin):
+    '''
+    This class is used to define the special proposals admin
+    :param admin.ModelAdmin: This class is used to define the special proposals admin
+    :type admin.ModelAdmin: class
+    :return
+    '''
+    list_display = ('name', 'price', 'old_price', 'mark', 'photo_src_tag', 'is_visible')
+    list_editable = ('price', 'is_visible','mark', 'old_price')
+    list_filter = ('is_visible',)
+    search_fields = ('name', 'is_visible')
+
+    def photo_src_tag(self, obj):
+        """
+        A function that generates an HTML img tag with the src attribute pointing to the URL of the photo.
+
+        Parameters:
+            obj (object): The object containing the photo information.
+
+        Returns:
+            str: An HTML img tag with the photo URL as the src attribute.
+        """
+        if obj.photo:
+            return mark_safe(f'<img src="{obj.photo.url}" width=50 height=50>')
+
+    photo_src_tag.short_description = 'Special proposals'
