@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class MenuCategory(models.Model):
@@ -77,7 +78,7 @@ class SpecialProposals(models.Model):
     old_price = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     photo = models.ImageField(upload_to='special_proposals/', blank=True)
     is_visible = models.BooleanField(default=True)
-    mark = models.CharField(max_length=50, blank=True)
+    mark = models.DecimalField(max_digits=2, decimal_places=1, blank=True, null=True, default=None, validators=[MinValueValidator(0), MaxValueValidator(5)])
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
