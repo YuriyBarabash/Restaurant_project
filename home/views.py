@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from menu.models import MenuCategory
-from .models import PopularMenu
+from .models import PopularMenu, BestPhrases
 
 
 def home(request):
@@ -28,7 +28,8 @@ def home(request):
         """
     categories = MenuCategory.objects.filter(is_visible=True)
     populas = PopularMenu.objects.filter(is_visible=True)
-    context = {'categories': categories, 'populas': populas}
+    phrases = BestPhrases.objects.filter(is_visible=True)
+    context = {'categories': categories, 'populas': populas, 'phrases': phrases}
     return render(request, 'home_index.html', context=context)
 
 

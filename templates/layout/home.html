@@ -268,50 +268,8 @@
             <div class="container"> 
                 <div class="row justify-content-center">  
                     <div class="col-xl-6 col-lg-8 col-md-10" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                        <div class="swiper slider-custom-image swiper-pagination-bottom magic-cursor testimonials-style-03" data-slider-options='{ "loop": true, "pagination": { "el": ".slider-custom-image-pagination", "type": "bullets", "clickable": true }, "keyboard": { "enabled": true, "onlyInViewport": true }, "navigation": { "nextEl": ".swiper-button-next-nav", "prevEl": ".swiper-button-previous-nav", "effect": "fade" } }' data-thumbs='["{% static 'images/148_148_answers.jpg' %}","{% static 'images/148_148_answers.jpg' %}","{% static 'images/148_148_answers.jpg' %}"]'>
-                            <div class="swiper-wrapper">
-                                <!-- start testimonial item -->
-                                <div class="swiper-slide" data-bullet-thumb="background-image: url('https://cdn.pixabay.com/photo/2014/06/03/19/38/test-361512_640.jpg')">
-                                    <div class="d-flex flex-column">
-                                        <div class="mb-28 align-self-center text-center w-100">
-                                            <img src={% static "images/demo-restaurant-home-quotes-icon.jpg" %} class="mb-30px rounded-circle" alt="">
-                                            <h4 class="alt-font lh-42 text-dark-gray mb-10px">Food for us comes from our relatives whether they have wings or fins or roots that is how we consider food has a culture It has history it has a story it has relationships.</h4>
-                                            <span class="fs-20 fw-500 text-base-color d-block">Herman miller</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end testimonial item -->
-                                <!-- start testimonial item -->
-                                <div class="swiper-slide" data-bullet-thumb="background-image: url(images/148x148_answers.jpg)">
-                                    <div class="d-flex flex-column">
-                                        <div class="mb-28 align-self-center text-center w-100">
-                                            <img src={% static "images/demo-restaurant-home-quotes-icon.jpg" %} class="mb-30px rounded-circle" alt="">
-                                            <h4 class="alt-font lh-42 text-dark-gray mb-10px">It was a lovely place with great ambience. Loved the service of the staff. The dishes are priced very high as compared to the quality. Thank you so much to all staff.</h4>
-                                            <span class="fs-20 fw-500 text-base-color d-block">Matthew taylor</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end testimonial item -->
-                                <!-- start testimonial item -->
-                                <div class="swiper-slide" data-bullet-thumb="background-image: url(https://via.placeholder.com/200x200)">
-                                    <div class="d-flex flex-column">
-                                        <div class="mb-28 align-self-center text-center w-100">
-                                            <img src={% static "images/demo-restaurant-home-quotes-icon.jpg" %} class="mb-30px rounded-circle" alt="">
-                                            <h4 class="alt-font lh-42 text-dark-gray mb-10px">Good communication and the food was great the facilities were good. Love the desserts and there way of presenting. We came here for a family dinner and this place won my heart.</h4>
-                                            <span class="fs-20 fw-500 text-base-color d-block">Leonel mooney</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end testimonial item --> 
-                            </div>
-                            <!-- start slider pagination -->
-                            <div class="slider-custom-image-pagination swiper-pagination text-center pb-20px xs-pb-0px md-bottom-0px"></div>
-                            <!-- end slider pagination -->
-                            <!-- start slider navigation -->
-                            <!--<div class="swiper-button-next-nav swiper-button-next mb-5px"><i class="line-icon-Arrow-OutRight icon-large text-light-gray"></i></div>
-                                <div class="swiper-button-previous-nav swiper-button-prev mb-5px"><i class="line-icon-Arrow-OutLeft icon-large text-light-gray"></i></div>-->
-                            <!-- end slider pagination -->
-                        </div>
+                        {% block best_phrases %}
+                        {% endblock %}                             
                     </div> 
                 </div>
             </div>

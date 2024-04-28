@@ -94,3 +94,26 @@
                 </div>
             </div>
 {% endblock %}
+{% block best_phrases %}
+    <div class="swiper slider-custom-image swiper-pagination-bottom magic-cursor testimonials-style-03" data-slider-options='{ "loop": true, "pagination": { "el": ".slider-custom-image-pagination", "type": "bullets", "clickable": true }, "keyboard": { "enabled": true, "onlyInViewport": true }, "navigation": { "nextEl": ".swiper-button-next-nav", "prevEl": ".swiper-button-previous-nav", "effect": "fade" } }' data-thumbs='[
+        {% for phrase in phrases %}
+            "{{ phrase.photo.url }}"{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ]'>
+        <div class="swiper-wrapper">
+            {% for phrase in phrases %}
+                <div class="swiper-slide" data-bullet-thumb="background-image: url('{{ phrase.photo.url }}')">
+                    <div class="d-flex flex-column">
+                        <div class="mb-28 align-self-center text-center w-100">
+                            <img src="{% static "images/demo-restaurant-home-quotes-icon.jpg" %}" class="mb-30px rounded-circle" alt="">
+                            <h4 class="alt-font lh-42 text-dark-gray mb-10px">{{ phrase.phrase }}</h4>
+                            <span class="fs-20 fw-500 text-base-color d-block">{{ phrase.author }}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="slider-custom-image-pagination swiper-pagination text-center pb-20px xs-pb-0px md-bottom-0px"></div>
+    </div>
+{% endblock %}
+

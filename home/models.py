@@ -21,3 +21,19 @@ class PopularMenu(models.Model):
         return self.name
 
 
+class BestPhrases(models.Model):
+    phrase = models.TextField()
+    author = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='best_phrases', blank=True)
+    is_visible = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Best Phrases'
+        ordering = ('-created_at',)
+
+    def __str__(self):
+        return self.phrase
+
+
