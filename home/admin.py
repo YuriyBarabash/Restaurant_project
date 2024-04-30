@@ -41,8 +41,8 @@ class BestPhrasesAdmin(admin.ModelAdmin):
     :type admin.ModelAdmin: class
     :return
     '''
-    list_display = ('phrase', 'author', 'photo_src_tag', 'is_visible')
-    list_editable = ('author', 'is_visible')
+    list_display = ('phrase', 'author', 'position', 'photo_src_tag', 'is_visible')
+    list_editable = ('author', 'is_visible', 'position')
     list_filter = ('is_visible',)
     search_fields = ('phrase', 'author')
 
