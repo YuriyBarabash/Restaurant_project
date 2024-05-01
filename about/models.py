@@ -53,12 +53,29 @@ class AboutSpecial(models.Model):
 
 class AboutAwards(models.Model):
     logo = models.ImageField(upload_to='about/about_awards/')
+    title = models.CharField(max_length=255, blank=True, null=True)
+    year = models.IntegerField(blank=True, null=True)
     is_visible = models.BooleanField(default=True)
     position = models.PositiveSmallIntegerField()
 
     class Meta:
         verbose_name_plural = 'Awards'
         ordering = ('position',)
+
+
+class AboutBottomSlider(models.Model):
+    photo = models.ImageField(upload_to='about/bottom_slider/')
+    title = models.CharField(max_length=255)
+    phrase = models.TextField()
+    is_visible = models.BooleanField(default=True)
+    position = models.PositiveSmallIntegerField()
+
+    class Meta:
+        verbose_name_plural = 'Bottom Slider'
+        ordering = ('position',)
+
+    def __str__(self):
+        return self.phrase
 
 
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import AboutSlider, AboutRestaurant, AboutSpecial, AboutAwards
+from .models import AboutSlider, AboutRestaurant, AboutSpecial, AboutAwards, AboutBottomSlider
 from django.utils.safestring import mark_safe
 
 
@@ -83,9 +83,9 @@ class AboutAwardsAdmin(admin.ModelAdmin):
     :type admin.ModelAdmin: class
     :return
     '''
-    list_display = ( 'logo_src_tag', 'position', 'is_visible')
+    list_display = ( 'logo_src_tag', 'position', 'title', 'year', 'is_visible')
     list_filter = ('is_visible',)
-    list_editable = ('is_visible', 'position')
+    list_editable = ('is_visible', 'position', 'title', 'year')
     ordering = ('position',)
 
     def logo_src_tag(self, obj):
@@ -96,3 +96,22 @@ class AboutAwardsAdmin(admin.ModelAdmin):
     logo_src_tag.short_description = 'Awards Logo'
 
 
+@admin.register(AboutBottomSlider)
+class AboutBottomSliderAdmin(admin.ModelAdmin):
+    '''
+    This class is used to define the admin panel for the AboutBottomSlider model
+    :param admin.ModelAdmin: This class is used to define the admin panel for the AboutBottomSlider model
+    :type admin.ModelAdmin: class
+    :return
+    '''
+    list_display = ('photo_src_tag', 'title', 'phrase', 'is_visible', 'position')
+    list_filter = ('is_visible',)
+    list_editable = ('is_visible', 'position', 'title', 'phrase')
+    ordering = ('position',)
+
+    def photo_src_tag(self, obj):
+
+        if obj.photo:
+            return mark_safe(f'<img src="{obj.photo.url}" width=50 height=50>')
+
+    photo_src_tag.short_description = 'Photo'

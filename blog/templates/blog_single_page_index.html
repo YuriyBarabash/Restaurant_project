@@ -1,0 +1,25 @@
+{% extends 'layout/blog_single_page.html' %}
+{% load static %}
+{% block content %}
+<!-- start section -->
+        <section class="big-section cover-background ipad-top-space-margin md-background-position-left-center" style="background-image: url({% static 'images/1920x500_background_about.jpg' %})">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 col-lg-11 text-center">
+                        <span class="fs-18 mb-5 d-inline-block">By <a href="#" class="text-dark-gray text-decoration-line-bottom">Jackson</a> in <a href="#" class="text-dark-gray text-decoration-line-bottom">{{ blog.mark }}</a> on {{ blog.created_at}}</span>
+                        <h1 class="alt-font fw-400 ls-minus-1px text-dark-gray mb-0">{{ blog.title }}</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+        <!-- start section -->
+        <section class="py-0 ps-13 pe-13 lg-ps-4 lg-pe-4 sm-px-0">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center"><img src={{ blog.photo.url }} width="450"  alt=""></div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+{% endblock %}

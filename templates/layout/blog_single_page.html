@@ -92,27 +92,8 @@
             <!-- end navigation -->
         </header>
         <!-- end header -->
-        <!-- start section -->
-        <section class="big-section cover-background ipad-top-space-margin md-background-position-left-center" style="background-image: url({% static 'images/1920x500_background_about.jpg' %})">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-10 col-lg-11 text-center">
-                        <span class="fs-18 mb-5 d-inline-block">By <a href="#" class="text-dark-gray text-decoration-line-bottom">Jackson</a> in <a href="#" class="text-dark-gray text-decoration-line-bottom">Cooking</a> on 26 November 2021</span>
-                        <h1 class="alt-font fw-400 ls-minus-1px text-dark-gray mb-0">A recipe has no soul. You, as the cook, must bring soul to the recipe</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
-        <!-- start section -->
-        <section class="py-0 ps-13 pe-13 lg-ps-4 lg-pe-4 sm-px-0">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-12"><img src={% static "images/demo-restaurant-blog-single-page-01.jpg" %} class="w-100" alt=""></div>
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
+        {% block content %}
+        {% endblock %} 
         <!-- start section -->
         <section>
             <div class="container">
@@ -249,69 +230,69 @@
         <!-- end section -->
         <!-- start section -->
         <section class="bg-very-light-gray"> 
-            <div class="container">
-                <div class="row justify-content-center mb-1">
-                    <div class="col-lg-7 text-center">
-                        <span class="fs-15 fw-600 text-red text-uppercase mb-10px d-block"><span class="w-5px h-2px bg-red d-inline-block align-middle me-5px"></span>You may also like<span class="w-5px h-2px bg-red d-inline-block align-middle ms-5px"></span></span>
-                        <h2 class="alt-font text-dark-gray fw-500">Related posts</h2>
-                    </div>
-                </div>
-                <div class="row blog-metro">
-                    <div class="col-12">
-                        <ul class="blog-metro blog-wrapper grid grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-large">
-                            <li class="grid-sizer"></li>
-                            <!-- start blog item -->
-                            <li class="grid-item">
-                                <figure class="position-relative mb-0 overflow-hidden border-radius-6px">
-                                    <div class="blog-image bg-dark-slate-blue">
-                                        <a href='{% url 'blog:blog_single_page' %}'><img src={% static "images/demo-restaurant-blog-01.jpg" %} alt="" /></a>
-                                        <div class="blog-overlay"></div>
-                                    </div>
-                                    <figcaption class="d-flex flex-column justify-content-end h-100 p-50px lg-p-35px">
-                                        <div class="blog-categories mb-auto">
-                                            <a href="#" class="categories-btn bg-white text-dark-gray text-uppercase fw-700 ms-0 mb-auto align-self-start">Restaurant</a>
-                                        </div> 
-                                        <a href='{% url 'blog:blog_single_page' %}' class="text-white card-title fs-28 lh-32 alt-font w-60 xl-w-70 lg-w-80 md-w-70">Never eat more than you can life</a>
-                                    </figcaption>
-                                </figure>
-                            </li>                            
-                            <!-- end blog item -->
-                            <!-- start blog item -->
-                            <li class="grid-item">
-                                <figure class="position-relative mb-0 overflow-hidden border-radius-6px">
-                                    <div class="blog-image bg-dark-slate-blue">
-                                        <a href='{% url 'blog:blog_single_page' %}'><img src={% static "images/demo-restaurant-blog-02.jpg" %} alt="" /></a>
-                                        <div class="blog-overlay"></div>
-                                    </div>
-                                    <figcaption class="d-flex flex-column justify-content-end h-100 p-50px lg-p-35px">
-                                        <div class="blog-categories mb-auto">
-                                            <a href="#" class="categories-btn bg-white text-dark-gray text-uppercase fw-700 ms-0 mb-auto align-self-start">Restaurant</a>
-                                        </div> 
-                                        <a href="{% url 'blog:blog_single_page' %}" class="text-white card-title fs-28 lh-32 alt-font w-60 xl-w-70 lg-w-80 md-w-70">Life is uncertain Eat dessert first</a>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <!-- end blog item -->
-                            <!-- start blog item -->
-                            <li class="grid-item">
-                                <figure class="position-relative mb-0 overflow-hidden border-radius-6px">
-                                    <div class="blog-image bg-dark-slate-blue">
-                                        <a href="{% url 'blog:blog_single_page' %}"><img src={% static "images/demo-restaurant-blog-03.jpg" %} alt="" /></a>
-                                        <div class="blog-overlay"></div>
-                                    </div>
-                                    <figcaption class="d-flex flex-column justify-content-end h-100 p-50px lg-p-35px">
-                                        <div class="blog-categories mb-auto">
-                                            <a href="#" class="categories-btn bg-white text-dark-gray text-uppercase fw-700 ms-0 mb-auto align-self-start">Restaurant</a>
-                                        </div> 
-                                        <a href="{% url 'blog:blog_single_page' %}" class="text-white card-title fs-28 lh-32 alt-font w-60 xl-w-70 lg-w-80 md-w-70">Food simply isn't important to me</a>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <!-- end blog item -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
+{#            <div class="container">#}
+{#                <div class="row justify-content-center mb-1">#}
+{#                    <div class="col-lg-7 text-center">#}
+{#                        <span class="fs-15 fw-600 text-red text-uppercase mb-10px d-block"><span class="w-5px h-2px bg-red d-inline-block align-middle me-5px"></span>You may also like<span class="w-5px h-2px bg-red d-inline-block align-middle ms-5px"></span></span>#}
+{#                        <h2 class="alt-font text-dark-gray fw-500">Related posts</h2>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row blog-metro">#}
+{#                    <div class="col-12">#}
+{#                        <ul class="blog-metro blog-wrapper grid grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-large">#}
+{#                            <li class="grid-sizer"></li>#}
+{#                            <!-- start blog item -->#}
+{#                            <li class="grid-item">#}
+{#                                <figure class="position-relative mb-0 overflow-hidden border-radius-6px">#}
+{#                                    <div class="blog-image bg-dark-slate-blue">#}
+{#                                        <a href='{% url 'blog' %}'><img src={% static "images/demo-restaurant-blog-01.jpg" %} alt="" /></a>#}
+{#                                        <div class="blog-overlay"></div>#}
+{#                                    </div>#}
+{#                                    <figcaption class="d-flex flex-column justify-content-end h-100 p-50px lg-p-35px">#}
+{#                                        <div class="blog-categories mb-auto">#}
+{#                                            <a href="#" class="categories-btn bg-white text-dark-gray text-uppercase fw-700 ms-0 mb-auto align-self-start">Restaurant</a>#}
+{#                                        </div> #}
+{#                                        <a href='{% url 'blog' %}' class="text-white card-title fs-28 lh-32 alt-font w-60 xl-w-70 lg-w-80 md-w-70">Never eat more than you can life</a>#}
+{#                                    </figcaption>#}
+{#                                </figure>#}
+{#                            </li>                            #}
+{#                            <!-- end blog item -->#}
+{#                            <!-- start blog item -->#}
+{#                            <li class="grid-item">#}
+{#                                <figure class="position-relative mb-0 overflow-hidden border-radius-6px">#}
+{#                                    <div class="blog-image bg-dark-slate-blue">#}
+{#                                        <a href='{% url 'blog' %}'><img src={% static "images/demo-restaurant-blog-02.jpg" %} alt="" /></a>#}
+{#                                        <div class="blog-overlay"></div>#}
+{#                                    </div>#}
+{#                                    <figcaption class="d-flex flex-column justify-content-end h-100 p-50px lg-p-35px">#}
+{#                                        <div class="blog-categories mb-auto">#}
+{#                                            <a href="#" class="categories-btn bg-white text-dark-gray text-uppercase fw-700 ms-0 mb-auto align-self-start">Restaurant</a>#}
+{#                                        </div> #}
+{#                                        <a href="{% url 'blog:' %}" class="text-white card-title fs-28 lh-32 alt-font w-60 xl-w-70 lg-w-80 md-w-70">Life is uncertain Eat dessert first</a>#}
+{#                                    </figcaption>#}
+{#                                </figure>#}
+{#                            </li>#}
+{#                            <!-- end blog item -->#}
+{#                            <!-- start blog item -->#}
+{#                            <li class="grid-item">#}
+{#                                <figure class="position-relative mb-0 overflow-hidden border-radius-6px">#}
+{#                                    <div class="blog-image bg-dark-slate-blue">#}
+{#                                        <a href="{% url 'blog' %}"><img src={% static "images/demo-restaurant-blog-03.jpg" %} alt="" /></a>#}
+{#                                        <div class="blog-overlay"></div>#}
+{#                                    </div>#}
+{#                                    <figcaption class="d-flex flex-column justify-content-end h-100 p-50px lg-p-35px">#}
+{#                                        <div class="blog-categories mb-auto">#}
+{#                                            <a href="#" class="categories-btn bg-white text-dark-gray text-uppercase fw-700 ms-0 mb-auto align-self-start">Restaurant</a>#}
+{#                                        </div> #}
+{#                                        <a href="{% url 'blog' %}" class="text-white card-title fs-28 lh-32 alt-font w-60 xl-w-70 lg-w-80 md-w-70">Food simply isn't important to me</a>#}
+{#                                    </figcaption>#}
+{#                                </figure>#}
+{#                            </li>#}
+{#                            <!-- end blog item -->#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
         </section>
         <!-- end section -->
         <!-- start section -->
