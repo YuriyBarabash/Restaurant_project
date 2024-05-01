@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     "gallery.apps.GalleryConfig",
     "menu.apps.MenuConfig",
     "story.apps.StoryConfig",
-    "contact.apps.ContactConfig"
+    "contact.apps.ContactConfig",
+    "words_belt.apps.WordsBeltConfig"
 ]
 
 MIDDLEWARE = [

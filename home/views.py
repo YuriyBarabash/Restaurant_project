@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from menu.models import MenuCategory
 from .models import PopularMenu, BestPhrases
+from words_belt.models import WordsBelt
 
 
 def home(request):
@@ -29,7 +30,8 @@ def home(request):
     categories = MenuCategory.objects.filter(is_visible=True)
     populas = PopularMenu.objects.filter(is_visible=True)
     phrases = BestPhrases.objects.filter(is_visible=True)
-    context = {'categories': categories, 'populas': populas, 'phrases': phrases}
+    words_belt = WordsBelt.objects.filter(is_visible=True)
+    context = {'categories': categories, 'populas': populas, 'phrases': phrases, 'words_belt': words_belt}
     return render(request, 'home_index.html', context=context)
 
 

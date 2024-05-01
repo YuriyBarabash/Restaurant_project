@@ -211,54 +211,8 @@
         <!-- end section -->
         <!-- start section --> 
         <section class="bg-very-light-gray position-relative big-section">
-            <div class="container-fluid overlap-section">
-                <div class="row position-relative mb-4" data-anime='{ "translateY": [0, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
-                    <div class="col swiper swiper-width-auto text-center" data-slider-options='{ "slidesPerView": "auto", "spaceBetween":50, "speed": 10000, "loop": true, "pagination": { "el": ".slider-four-slide-pagination-2", "clickable": false }, "allowTouchMove": false, "autoplay": { "delay":0, "disableOnInteraction": false }, "navigation": { "nextEl": ".slider-four-slide-next-2", "prevEl": ".slider-four-slide-prev-2" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "slide" }'>
-                        <div class="swiper-wrapper marquee-slide">
-                            <!-- start slider item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 ls-minus-2px alt-font text-outline text-outline-color-base-color">Delicious</div>
-                            </div>
-                            <!-- end slider item -->
-                            <!-- start slider item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 ls-minus-2px alt-font text-dark-gray">Awesome</div>
-                            </div>
-                            <!-- end slider item -->
-                            <!-- start slider item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 ls-minus-2px alt-font text-outline text-outline-color-base-color">Experience</div>
-                            </div>
-                            <!-- end slider item -->
-                            <!-- start slider item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 ls-minus-2px alt-font text-dark-gray">Cuisine</div>
-                            </div>
-                            <!-- end slider item --> 
-                            <!-- start slider item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 ls-minus-2px alt-font text-outline text-outline-color-base-color">Delicious</div>
-                            </div>
-                            <!-- end slider item -->
-                            <!-- start slider item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 ls-minus-2px alt-font text-dark-gray">Awesome</div>
-                            </div>
-                            <!-- end slider item -->
-                            <!-- start slider item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 ls-minus-2px alt-font text-outline text-outline-color-base-color">Experience</div>
-                            </div>
-                            <!-- end slider item -->
-                            <!-- start slider item -->
-                            <div class="swiper-slide">
-                                <div class="fs-150 ls-minus-2px alt-font text-dark-gray">Cuisine</div>
-                            </div>
-                            <!-- end slider item --> 
-                        </div> 
-                    </div>  
-                </div>
-            </div>
+            {% block belt_content %}
+            {% endblock %}
             <div class="position-absolute left-150px xxl-left-50px mt-7 d-none d-xxl-inline-block" data-parallax-liquid="true" data-parallax-transition="1" data-parallax-position="top">
                 <img src={% static "images/demo-restaurant-home-07.jpg" %} alt="">
             </div>
@@ -351,7 +305,7 @@
         </section>
         <!-- end section -->
         <!-- start footer -->  
-        <footer class="pb-0 bg-very-light-gray cover-background background-position-center-top sm-background-image-none" style="background-image: url('images/1920x678_background.jpg')">
+        <footer class="pb-0 bg-very-light-gray cover-background background-position-center-top sm-background-image-none" style="background-image: url({% static 'images/1920x678_background.jpg' %})">
             <div class="container">
                 <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center mt-13 md-mt-15 sm-mt-0 mb-5 sm-mb-50px">                  
                     <!-- start features box item -->

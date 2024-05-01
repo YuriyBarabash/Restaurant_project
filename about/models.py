@@ -11,7 +11,7 @@ class AboutSlider(models.Model):
     position = models.PositiveSmallIntegerField()
 
     class Meta:
-        verbose_name_plural = 'About Slider'
+        verbose_name_plural = 'Head Slider'
         ordering = ('position',)
 
     def __str__(self):
@@ -44,7 +44,7 @@ class AboutSpecial(models.Model):
     position = models.PositiveSmallIntegerField()
 
     class Meta:
-        verbose_name_plural = 'About Special'
+        verbose_name_plural = 'Special'
         ordering = ('position',)
 
     def __str__(self):
@@ -57,7 +57,7 @@ class AboutAwards(models.Model):
     position = models.PositiveSmallIntegerField()
 
     class Meta:
-        verbose_name_plural = 'About Awards'
+        verbose_name_plural = 'Awards'
         ordering = ('position',)
 
 
