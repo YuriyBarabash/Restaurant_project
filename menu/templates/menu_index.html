@@ -13,7 +13,7 @@
                     <ul class="nav nav-tabs fs-18 fw-500 justify-content-center text-center mb-4 sm-mb-0" data-anime='{ "el": "childs", "rotateX": [30, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
                         {% for category in categories %}
                             <li class="nav-item active">
-                                <a class="nav-link{% if loop.first %} active{% endif %}" data-bs-toggle="tab" href="#tab_{{ category.id }}">
+                                <a class="nav-link{% if forloop.first %} active{% endif %}" data-bs-toggle="tab" href="#tab_{{ category.id }}">
                                     <i class="line-icon-{{ category.icon }} d-block icon-large mb-10px"></i>{{ category.name }}
                                 </a>
                             </li>
@@ -22,7 +22,7 @@
                     <div class="tab-content">
                         <!-- start tab content -->
                         {% for category in categories %}
-                            <div class="tab-pane fade{% if loop.first %} in active show{% endif %}" id="tab_{{ category.id }}">
+                            <div class="tab-pane fade{% if forloop.first %} in active show{% endif %}" id="tab_{{ category.id }}">
                                 <div class="row justify-content-center">
                                     {% for dish in category %}
                                         <div class="col-lg-6 sm-mb-20px">

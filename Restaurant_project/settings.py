@@ -46,8 +46,20 @@ INSTALLED_APPS = [
     "menu.apps.MenuConfig",
     "story.apps.StoryConfig",
     "contact.apps.ContactConfig",
-    "words_belt.apps.WordsBeltConfig"
+    "words_belt.apps.WordsBeltConfig",
+    'ckeditor',
 ]
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 150,
+        'width': '100%',
+        'removePlugins': 'stylesheetparser',
+
+    },
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,6 +85,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'home.context_processors.footer_items',
             ],
         },
     },
@@ -138,3 +151,4 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

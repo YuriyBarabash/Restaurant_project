@@ -18,7 +18,7 @@ def blog(request):
             None
         """
     blog_list = Blog.objects.filter(is_published=True)
-    paginator = Paginator(blog_list, 6)
+    paginator = Paginator(blog_list, 3)
     page = request.GET.get('page')
     try:
         blogs = paginator.page(page)

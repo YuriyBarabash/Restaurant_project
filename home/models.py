@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class PopularMenu(models.Model):
@@ -36,5 +37,16 @@ class BestPhrases(models.Model):
 
     def __str__(self):
         return self.phrase
+
+
+class FooterItem(models.Model):
+    address = RichTextField()
+    phone = models.CharField(max_length=255)
+    email = models.EmailField()
+    working_hours = RichTextField()
+    twitter = models.URLField(max_length=255, blank=True)
+    facebook = models.URLField(max_length=255, blank=True)
+    instagram = models.URLField(max_length=255, blank=True)
+    youtube = models.URLField(max_length=255, blank=True)
 
 

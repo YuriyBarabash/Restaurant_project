@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import PopularMenu, BestPhrases
+from .models import PopularMenu, BestPhrases, FooterItem
 from django.utils.safestring import mark_safe
+
+admin.site.register(FooterItem)
 
 
 @admin.register(PopularMenu)
@@ -60,3 +62,5 @@ class BestPhrasesAdmin(admin.ModelAdmin):
             return mark_safe(f'<img src="{obj.photo.url}" width=50 height=50>')
 
     photo_src_tag.short_description = 'Best phrases'
+
+
