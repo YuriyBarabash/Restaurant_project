@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from home.views import home
 from menu.views import menu
-from about.views import about
+from about.views import About
 from chefs.views import chefs
 from gallery.views import gallery
 from story.views import story
@@ -31,7 +31,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('menu/', menu, name='menu'),
-    path('about/', about, name='about'),
+    path('about/', About.as_view(), name='about'),
     path('blog/', include('blog.urls')),
     path('chefs/', chefs, name='chefs'),
     path('gallery/', gallery, name='gallery'),

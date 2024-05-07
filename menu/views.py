@@ -28,5 +28,8 @@ def menu(request):
 
     categories = MenuCategory.objects.filter(is_visible=True)
     special_proposals = SpecialProposals.objects.filter(is_visible=True)
-    context = {'categories': categories, 'special_proposals': special_proposals}
+    context = {
+        'categories': categories,
+        'special_proposals': special_proposals
+    }
     return render(request, 'menu_index.html', context=context)

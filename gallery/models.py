@@ -30,7 +30,6 @@ class Gallery(models.Model):
     class Meta:
         verbose_name_plural = 'Gallery'
         ordering = ('position',)
-        constraints = [
-            models.UniqueConstraint(fields=['position', 'category'], name='unique_position_per_each_category_gallery'), ]
+
 
 
