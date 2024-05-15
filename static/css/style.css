@@ -3117,12 +3117,14 @@ input:focus, select:focus, textarea:focus, .form-control:focus {
   -ms-flex-item-align: center;
   align-self: center;
 }
+
 .theme-demos .mCustomScrollBox .mCSB_draggerRail {
   display: none;
 }
 .theme-demos .clearfix {
   clear: both;
 }
+
 .theme-demos .portfolio-wrapper .grid-item {
   flex: 0 0 auto;
 }

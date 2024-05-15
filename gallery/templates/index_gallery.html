@@ -3,7 +3,7 @@
 
 {% block gallery_content %}
     <div class="row mb-6 xs-mb-8">
-        <div class="col tab-style-02 fs-600">
+        <div class="col tab-style-08 fs-600">
             <ul class="nav nav-tabs fs-18 fw-500 justify-content-center text-center mb-4 sm-mb-0" data-anime='{ "el": "childs", "rotateX": [30, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
             {% for category in categories %}
                <li class="nav-item active">
@@ -15,32 +15,36 @@
             </ul>
         </div>
     </div>
-
     <div class="container">
         <div class="row">
             <div class="col-12 filter-content">
                 <ul class="portfolio-simple portfolio-wrapper grid-loading grid grid-3col xxl-grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large text-center">
                     <li class="grid-sizer"></li>
-                    {% for category in categories %}
-                        <div class="tab-pane fade{% if forloop.first %} in active show{% endif %}" id="tab_{{ category.id }}">
-                            {% for image in category %}
-                                <li class="grid-item transition-inner-all">
-                                    <div class="portfolio-box">
-                                        <div class="portfolio-image bg-dark-gray border-radius-6px">
-                                            <img src="{{ image.photo.url }}" alt="">
-                                            <div class="portfolio-hover d-flex justify-content-center flex-column p-35px">
-                                                <div class="portfolio-icon d-flex flex-row justify-content-center align-items-center">
-                                                    <a href="{{ image.photo.url }}" data-group="portfolio-items" class="d-flex flex-column justify-content-center text-dark-gray text-dark-gray-hover rounded-circle bg-white w-60px h-60px rounded-circle box-shadow-large move-bottom-top" title="Lightbox gallery image title">
-                                                        <i class="feather icon-feather-search fw-600" aria-hidden="true"></i>
-                                                    </a>
+                    <div class="tab-content">
+                        <!-- start tab content -->
+                        {% for category in categories %}
+                            <div class="tab-pane fade{% if forloop.first %} in active show{% endif %}" id="tab_{{ category.id }}">
+                                <div class="row justify-content-center">
+                                    {% for image in category %}
+                                        <li class="grid-item transition-inner-all">
+                                            <div class="portfolio-box">
+                                                <div class="portfolio-image bg-dark-gray border-radius-6px">
+                                                    <img src="{{ image.photo.url }}" alt="">
+                                                    <div class="portfolio-hover d-flex justify-content-center flex-column p-35px">
+                                                        <div class="portfolio-icon d-flex flex-row justify-content-center align-items-center">
+                                                            <a href="{{ image.photo.url }}" data-group="portfolio-items" class="d-flex flex-column justify-content-center text-dark-gray text-dark-gray-hover rounded-circle bg-white w-60px h-60px rounded-circle box-shadow-large move-bottom-top" title="Lightbox gallery image title">
+                                                                <i class="feather icon-feather-search fw-600" aria-hidden="true"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        </div>
-                    {% endfor %}
+                                        </li>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </ul>
             </div>
         </div>
